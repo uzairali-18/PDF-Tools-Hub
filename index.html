@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free PDF Tools Hub - Convert, edit, and optimize PDFs online. No watermarks, no sign-ups, completely free. PDF to Word, Merge PDF, Compress PDF and more.">
+    <meta name="keywords" content="PDF tools, free PDF converter, PDF to Word, merge PDF, compress PDF, convert PDF online free, PDF converter no watermark">
+    <title>PDF Tools Hub - Free Online PDF Tools | Convert & Edit PDFs</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%232563eb' width='100' height='100' rx='20'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EP%3C/text%3E%3C/svg%3E">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PDF Tools Hub",
+      "description": "Free online PDF tools for converting, editing, and optimizing PDF files",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": "PDF conversion, PDF editing, PDF merging, PDF compression, Format conversion"
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --green: #10b981;
+            --purple: #8b5cf6;
+            --orange: #f97316;
+            --red: #ef4444;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--gray-50);
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            background: var(--primary);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .logo-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: white;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-nav {
+            display: none;
+            padding: 1rem 0;
+            border-top: 1px solid var(--gray-200);
+            margin-top: 1rem;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--gray-700);
+            text-decoration: none;
+        }
+
+        main {
+            min-height: calc(100vh - 200px);
+            padding-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        .hero .description {
+            font-size: 1.125rem;
+            color: var(--gray-500);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--gray-200);
+        }
+
+        .feature-icon {
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        .tool-category {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--gray-200);
+        }
+
+        .tool-category h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .tool-button {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+        }
+
+        .tool-button:hover {
+            background: #dbeafe;
+            border-color: #93c5fd;
+        }
+
+        .tool-name {
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .tool-desc {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+        }
+
+        .tool-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .back-button {
+            color: var(--primary);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .tool-header svg {
+            width: 48px;
+            height: 48px;
+            stroke: var(--primary);
+        }
+
+        .tool-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .tool-content {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+        }
+
+        .upload-area {
+            border: 2px dashed var(--gray-300);
+            border-radius: 0.5rem;
+            padding: 3rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .upload-area:hover {
+            border-color: var(--primary);
+            background: var(--gray-50);
+        }
+
+        .upload-icon {
+            width: 48px;
+            height: 48px;
+            stroke: var(--gray-400);
+            margin: 0 auto 1rem;
+        }
+
+        .file-preview {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #dbeafe;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #93c5fd;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .btn-primary:disabled {
+            background: var(--gray-400);
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: var(--gray-200);
+            color: var(--gray-800);
+        }
+
+        .btn-block {
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .alert-error {
+            background: #fee2e2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+        }
+
+        .success-state {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            background: #d1fae5;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid white;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .how-it-works {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .how-it-works h3 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .how-it-works ol {
+            color: var(--gray-600);
+            padding-left: 1.5rem;
+        }
+
+        .how-it-works li {
+            margin-bottom: 0.5rem;
+        }
+
+        .about-section {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--gray-200);
+        }
+
+        .about-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .about-section p {
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+        }
+
+        .maintained-by {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 2rem;
+            border: 1px solid #93c5fd;
+        }
+
+        .maintained-by h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .developer-profile {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .developer-photo {
+            width: 128px;
+            height: 128px;
+            background: linear-gradient(135deg, #60a5fa 0%, #6366f1 100%);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .developer-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .developer-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .developer-info .title {
+            font-size: 1.125rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .developer-info .bio {
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+        }
+
+        .expertise-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .expertise-list li {
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .expertise-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 3rem 0;
+            border-top: 1px solid var(--gray-800);
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 0.875rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-800);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            nav {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            .developer-profile {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo" onclick="showHome(); return false;">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>PDF Tools Hub</h1>
+                    <p>Free PDF Tools Online</p>
+                </div>
+            </a>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+            <nav>
+                <a href="#" onclick="showHome(); return false;">Home</a>
+                <a href="#" onclick="showAbout(); return false;">About</a>
+            </nav>
+
+            <div class="mobile-nav" id="mobile-nav">
+                <a href="#" onclick="showHome(); closeMobileMenu(); return false;">Home</a>
+                <a href="#" onclick="showAbout(); closeMobileMenu(); return false;">About</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="home-page" class="container">
+            <section class="hero">
+                <h1>PDF Tools Hub</h1>
+                <p class="subtitle">Free Online PDF Tools - Convert, Edit, and Optimize PDFs</p>
+                <p class="description">
+                    Professional PDF tools completely free. No watermarks, no sign-ups, no limits. 
+                    All processing happens in your browser - your files never leave your device.
+                </p>
+            </section>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3>100% Private</h3>
+                    <p>All processing happens locally in your browser. Your files never leave your device.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Completely Free</h3>
+                    <p>No hidden costs, no watermarks, no file size limits. All tools are free forever.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Instant processing with no uploads or downloads to external servers.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                    </div>
+                    <h3>All Tools Included</h3>
+                    <p>Convert, edit, merge, split, compress, and more - everything you need.</p>
+                </div>
+            </div>
+
+            <section class="tool-category">
+                <h2>PDF Conversion</h2>
+                <div class="tools-grid" id="pdf-conversion-tools"></div>
+            </section>
+
+            <section class="tool-category">
+                <h2>Format Conversion</h2>
+                <div class="tools-grid" id="format-conversion-tools"></div>
+            </section>
+
+            <section class="tool-category">
+                <h2>PDF Editing Tools</h2>
+                <div class="tools-grid" id="pdf-editing-tools"></div>
+            </section>
+
+            <section class="tool-category">
+                <h2>PDF Utilities</h2>
+                <div class="tools-grid" id="pdf-utilities-tools"></div>
+            </section>
+
+            <!-- Maintained By Section on Home Page -->
+            <section class="maintained-by" style="margin-top: 4rem;">
+                <h2>Maintained By</h2>
+                <div class="developer-profile">
+                    <div class="developer-photo">UA</div>
+                    <div class="developer-info">
+                        <h3>Uzair Ali</h3>
+                        <p class="title">SEO Specialist & Web Developer</p>
+                        <p class="bio">
+                            Mid-level developer specializing in building practical web tools and SEO-optimized websites. 
+                            Passionate about creating fast, user-friendly applications that solve real problems.
+                        </p>
+                        <ul class="expertise-list">
+                            <li>Builds practical web tools for everyday use</li>
+                            <li>Develops SEO-optimized websites that rank</li>
+                            <li>Focuses on performance and user experience</li>
+                        </ul>
+                        <div class="cta-buttons">
+                            <a href="#portfolio" class="btn btn-primary">Reach out to Uzair Ali for work</a>
+                            <button class="btn btn-secondary" onclick="showAbout()">View Full About Page</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="tool-page" class="tool-page hidden">
+            <button class="back-button" onclick="showHome()">← Back to all tools</button>
+            <div class="tool-header" id="tool-header"></div>
+            <div class="tool-content">
+                <div id="upload-section">
+                    <div class="upload-area" id="upload-area" onclick="document.getElementById('file-input').click()">
+                        <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                        <p style="font-size: 1.125rem; color: var(--gray-700); margin-bottom: 0.5rem;">
+                            Drag and drop your file here
+                        </p>
+                        <p style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 1rem;">
+                            or click to browse
+                        </p>
+                        <div id="file-preview-container"></div>
+                    </div>
+                    <input type="file" id="file-input" style="display: none;" />
+                    <div id="error-message"></div>
+                    <button id="process-btn" class="btn btn-primary btn-block hidden">Convert File</button>
+                </div>
+
+                <div id="success-section" class="success-state hidden">
+                    <div class="success-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Conversion Complete!</h3>
+                    <p style="color: var(--gray-600); margin-bottom: 1.5rem;">Your file has been processed successfully.</p>
+                    <div class="success-actions">
+                        <button class="btn btn-primary">Download File</button>
+                        <button class="btn btn-secondary" onclick="resetTool()">Convert Another</button>
+                    </div>
+                </div>
+
+                <div class="how-it-works">
+                    <h3>How it works:</h3>
+                    <ol id="how-it-works-list">
+                        <li>Upload your file by dragging and dropping or clicking to browse</li>
+                        <li>The file is processed locally in your browser - it never leaves your device</li>
+                        <li>Download your converted file instantly</li>
+                    </ol>
+                    <p class="note">Note: All processing happens client-side. Your privacy is guaranteed - no data is sent to any server.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="about-page" class="container hidden">
+            <div style="padding: 3rem 1rem;">
+                <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">About PDF Tools Hub</h1>
+                
+                <div class="about-section">
+                    <h2>What is PDF Tools Hub?</h2>
+                    <p>
+                        PDF Tools Hub is a comprehensive collection of free online PDF tools designed to handle all your document needs. 
+                        From converting PDFs to various formats to editing and optimizing them, we provide professional-grade tools that 
+                        work entirely in your browser.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <h2>Why is it Free?</h2>
+                    <p>
+                        We believe essential tools should be accessible to everyone. PDF Tools Hub is completely free with no hidden costs, 
+                        no watermarks, and no file size limitations. We don't monetize your data or require sign-ups.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <h2>Privacy & Security</h2>
+                    <p>
+                        Your privacy matters. All file processing happens locally in your browser using JavaScript. Your files never leave 
+                        your device and are never uploaded to our servers. We don't store, track, or have access to your documents.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <h2>Built for Speed</h2>
+                    <p>
+                        By processing files locally, PDF Tools Hub delivers instant results without the delays of uploading and downloading 
+                        from servers. Our tools are optimized for performance and work on all modern browsers.
+                    </p>
+                </div>
+
+                <div class="maintained-by">
+                    <h2>Maintained By</h2>
+                    <div class="developer-profile">
+                        <div class="developer-photo">UA</div>
+                        <div class="developer-info">
+                            <h3>Uzair Ali</h3>
+                            <p class="title">SEO Specialist & Web Developer</p>
+                            <p class="bio">
+                                Mid-level developer specializing in building practical web tools and SEO-optimized websites. 
+                                Passionate about creating fast, user-friendly applications that solve real problems.
+                            </p>
+                            <ul class="expertise-list">
+                                <li>Builds practical web tools for everyday use</li>
+                                <li>Develops SEO-optimized websites that rank</li>
+                                <li>Focuses on performance and user experience</li>
+                            </ul>
+                            <div class="cta-buttons">
+                                <a href="#portfolio" class="btn btn-primary">Reach out to Uzair Ali for work</a>
+                                <button class="btn btn-secondary" onclick="showHome()">Back to Home</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>PDF Tools Hub</h3>
+                    <p>
+                        Free online PDF tools. Convert, edit, and optimize PDFs right in your browser. 
+                        No uploads, no watermarks, completely free.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="openTool('pdf-to-word'); return false;">PDF to Word Converter</a></li>
+                        <li><a href="#" onclick="openTool('merge-pdf'); return false;">Merge PDF Files</a></li>
+                        <li><a href="#" onclick="openTool('compress-pdf'); return false;">Compress PDF</a></li>
+                        <li><a href="#" onclick="openTool('jpg-to-pdf'); return false;">JPG to PDF</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 PDF Tools Hub. All rights reserved. Built with ❤️ for privacy and speed.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const tools = {
+            pdfConversion: [
+                { id: 'pdf-to-word', name: 'PDF to Word', from: 'PDF', to: 'DOCX' },
+                { id: 'pdf-to-excel', name: 'PDF to Excel', from: 'PDF', to: 'XLSX' },
+                { id: 'pdf-to-ppt', name: 'PDF to PowerPoint', from: 'PDF', to: 'PPTX' },
+                { id: 'pdf-to-jpg', name: 'PDF to JPG', from: 'PDF', to: 'JPG' },
+                { id: 'pdf-to-png', name: 'PDF to PNG', from: 'PDF', to: 'PNG' },
+                { id: 'pdf-to-txt', name: 'PDF to Text', from: 'PDF', to: 'TXT' },
+                { id: 'pdf-to-html', name: 'PDF to HTML', from: 'PDF', to: 'HTML' },
+                { id: 'word-to-pdf', name: 'Word to PDF', from: 'DOCX', to: 'PDF' },
+                { id: 'excel-to-pdf', name: 'Excel to PDF', from: 'XLSX', to: 'PDF' },
+                { id: 'ppt-to-pdf', name: 'PowerPoint to PDF', from: 'PPTX', to: 'PDF' },
+                { id: 'jpg-to-pdf', name: 'JPG to PDF', from: 'JPG', to: 'PDF' },
+                { id: 'png-to-pdf', name: 'PNG to PDF', from: 'PNG', to: 'PDF' },
+                { id: 'txt-to-pdf', name: 'Text to PDF', from: 'TXT', to: 'PDF' },
+                { id: 'html-to-pdf', name: 'HTML to PDF', from: 'HTML', to: 'PDF' }
+            ],
+            formatConversion: [
+                { id: 'word-to-excel', name: 'Word to Excel', from: 'DOCX', to: 'XLSX' },
+                { id: 'excel-to-word', name: 'Excel to Word', from: 'XLSX', to: 'DOCX' },
+                { id: 'jpg-to-png', name: 'JPG to PNG', from: 'JPG', to: 'PNG' },
+                { id: 'png-to-jpg', name: 'PNG to JPG', from: 'PNG', to: 'JPG' },
+                { id: 'txt-to-docx', name: 'Text to Word', from: 'TXT', to: 'DOCX' },
+                { id: 'docx-to-txt', name: 'Word to Text', from: 'DOCX', to: 'TXT' }
+            ],
+            pdfEditing: [
+                { id: 'merge-pdf', name: 'Merge PDFs', desc: 'Combine multiple PDF files into one' },
+                { id: 'split-pdf', name: 'Split PDF', desc: 'Extract pages from PDF' },
+                { id: 'compress-pdf', name: 'Compress PDF', desc: 'Reduce PDF file size' },
+                { id: 'rotate-pdf', name: 'Rotate PDF', desc: 'Rotate PDF pages' },
+                { id: 'reorder-pdf', name: 'Reorder Pages', desc: 'Rearrange PDF pages' },
+                { id: 'delete-pages', name: 'Delete Pages', desc: 'Remove pages from PDF' },
+                { id: 'add-page-numbers', name: 'Add Page Numbers', desc: 'Number PDF pages' },
+                { id: 'add-watermark', name: 'Add Watermark', desc: 'Add text or image watermark' },
+                { id: 'lock-pdf', name: 'Lock PDF', desc: 'Password protect PDF' },
+                { id: 'unlock-pdf', name: 'Unlock PDF', desc: 'Remove PDF password' }
+            ],
+            pdfUtilities: [
+                { id: 'pdf-metadata', name: 'PDF Metadata Viewer', desc: 'View PDF properties and info' },
+                { id: 'pdf-page-count', name: 'PDF Page Counter', desc: 'Count pages in PDF' },
+                { id: 'pdf-size-analyzer', name: 'PDF Size Analyzer', desc: 'Analyze PDF file size' },
+                { id: 'pdf-preview', name: 'PDF Preview', desc: 'Preview PDF files' }
+            ]
+        };
+
+        let currentTool = null;
+        let uploadedFile = null;
+
+        function renderTools() {
+            renderToolCategory('pdf-conversion-tools', tools.pdfConversion);
+            renderToolCategory('format-conversion-tools', tools.formatConversion);
+            renderToolCategory('pdf-editing-tools', tools.pdfEditing);
+            renderToolCategory('pdf-utilities-tools', tools.pdfUtilities);
+        }
+
+        function renderToolCategory(containerId, toolList) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = toolList.map(tool => `
+                <button class="tool-button" onclick="openTool('${tool.id}')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <div class="tool-info">
+                        <div class="tool-name">${tool.name}</div>
+                        ${tool.desc ? `<div class="tool-desc">${tool.desc}</div>` : ''}
+                    </div>
+                </button>
+            `).join('');
+        }
+
+        function getAllTools() {
+            return [...tools.pdfConversion, ...tools.formatConversion, ...tools.pdfEditing, ...tools.pdfUtilities];
+        }
+
+        function openTool(toolId) {
+            const allTools = getAllTools();
+            currentTool = allTools.find(t => t.id === toolId);
+            
+            if (!currentTool) return;
+
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('about-page').classList.add('hidden');
+            document.getElementById('tool-page').classList.remove('hidden');
+
+            const header = document.getElementById('tool-header');
+            header.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <div>
+                    <h1>${currentTool.name}</h1>
+                    ${currentTool.desc ? `<p style="color: var(--gray-600); margin-top: 0.25rem;">${currentTool.desc}</p>` : ''}
+                    ${currentTool.from && currentTool.to ? `<p style="font-size: 0.875rem; color: var(--gray-500); margin-top: 0.25rem;">Convert ${currentTool.from} to ${currentTool.to}</p>` : ''}
+                </div>
+            `;
+
+            const howItWorksList = document.getElementById('how-it-works-list');
+            if (currentTool.from && currentTool.to) {
+                howItWorksList.innerHTML = `
+                    <li>Upload your ${currentTool.from} file by dragging and dropping or clicking to browse</li>
+                    <li>The file is processed locally in your browser - it never leaves your device</li>
+                    <li>Download your converted ${currentTool.to} file instantly</li>
+                `;
+            } else {
+                howItWorksList.innerHTML = `
+                    <li>Upload your file by dragging and dropping or clicking to browse</li>
+                    <li>The file is processed locally in your browser - it never leaves your device</li>
+                    <li>Download your processed file instantly</li>
+                `;
+            }
+
+            const processBtn = document.getElementById('process-btn');
+            processBtn.textContent = currentTool.to ? `Convert to ${currentTool.to}` : 'Process File';
+
+            resetTool();
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            document.getElementById('home-page').classList.remove('hidden');
+            document.getElementById('tool-page').classList.add('hidden');
+            document.getElementById('about-page').classList.add('hidden');
+            currentTool = null;
+            resetTool();
+            window.scrollTo(0, 0);
+        }
+
+        function showAbout() {
+            document.getElementById('home-page').classList.add('hidden');
+            document.getElementById('tool-page').classList.add('hidden');
+            document.getElementById('about-page').classList.remove('hidden');
+            currentTool = null;
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            document.getElementById('mobile-nav').classList.remove('active');
+        }
+
+        function resetTool() {
+            uploadedFile = null;
+            document.getElementById('file-input').value = '';
+            document.getElementById('file-preview-container').innerHTML = '';
+            document.getElementById('error-message').innerHTML = '';
+            document.getElementById('process-btn').classList.add('hidden');
+            document.getElementById('upload-section').classList.remove('hidden');
+            document.getElementById('success-section').classList.add('hidden');
+        }
+
+        document.getElementById('file-input').addEventListener('change', function(e) {
+            handleFileSelect(e.target.files[0]);
+        });
+
+        const uploadArea = document.getElementById('upload-area');
+        
+        uploadArea.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', function(e) {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            
+            const file = e.dataTransfer.files[0];
+            if (file) {
+                handleFileSelect(file);
+            }
+        });
+
+        function handleFileSelect(file) {
+            if (!file) return;
+
+            uploadedFile = file;
+            
+            const previewContainer = document.getElementById('file-preview-container');
+            previewContainer.innerHTML = `
+                <div class="file-preview">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <span style="font-size: 0.875rem; font-weight: 500;">${file.name}</span>
+                    <button class="remove-file" onclick="event.stopPropagation(); resetTool();">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('error-message').innerHTML = '';
+            document.getElementById('process-btn').classList.remove('hidden');
+        }
+
+        document.getElementById('process-btn').addEventListener('click', function() {
+            if (!uploadedFile) {
+                showError('Please upload a file first');
+                return;
+            }
+
+            const btn = this;
+            btn.disabled = true;
+            btn.innerHTML = `
+                <div class="spinner"></div>
+                Processing...
+            `;
+
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = currentTool.to ? `Convert to ${currentTool.to}` : 'Process File';
+                
+                document.getElementById('upload-section').classList.add('hidden');
+                document.getElementById('success-section').classList.remove('hidden');
+            }, 2000);
+        });
+
+        function showError(message) {
+            const errorContainer = document.getElementById('error-message');
+            errorContainer.innerHTML = `
+                <div class="alert alert-error">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span>${message}</span>
+                </div>
+            `;
+        }
+
+        renderTools();
+    </script>
+</body>
+</html>
